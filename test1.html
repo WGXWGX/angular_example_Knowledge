@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div ng-app="myApp">
+		<div ng-controller="firstController">
+			<input type="text" value="123" ng-model="num">
+			{{num}}
+			<!-- <div ng-bind="num"></div>    -->
+			<button ng-click="aa()">清空</button>
+			<table border="1">
+				<tr>
+					<td ng-repeat="item in nums" ng-bind="item.id"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script src="angular-1.2.18/angular.js"></script>
+	<script src="test.js"></script>
+</body>
+</html>

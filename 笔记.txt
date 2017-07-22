@@ -1,0 +1,141 @@
+github使用.客户端使用
+	GitHub：开源代码社区，项目托管网站 客户端
+	git：版本控制工具  git commit是将本地修改过的文件提交到本地库中。
+				       git push是将本地库中的最新信息发送给远程库。
+	svn: 在svnChina上买一个svn的服务器，添加其他成员，用webstorm，aptana等客户端工具都行
+		 在svn上把项目下载到本地 vcs-checkout from-subversion
+photoshop. 
+	新建很多图层，最后建的在最上面。
+	初始设置：编辑-首选项-单位与标尺  视图-对齐-参考线 字体-windowsLCD
+	新建-ctrl+N
+	把标尺显示-ctrl+r
+	填充颜色-ctrl+delete  alt+delete
+	放大缩小-ctrl+空格   ctrl+alt+空格
+	选区工具：选中 按ctrl键变成小剪刀移动
+	移动工具：移动该图层内容
+	套索工具：选区-双击自动闭合    
+	魔棒工具：双击改变容差值，delete背景就可以移动了。
+	裁切工具：辅助线，回车裁切。
+	字体：点击图层，栅格化文字之后就可以用橡皮工具.
+html5,css3,js
+eDM的制作.      电子邮件营销  类似于html，有收藏
+angular
+	angularjs实现了什么?
+		数据的双向绑定和依赖注入。
+	标签
+		ng-app：指令定义了 AngularJS 应用程序的根元素。
+		ng-model数据双向绑定:与html dom的本质区别不是view来改变view，而是真实改变了控制器里的值了。
+		ng-init:不常见，初始化数据。
+		ng-repeat：指令对于集合中（数组中）的每个项会 克隆一次 HTML 元素。
+		ng-click:点击
+		ng-show:当""里的值有值得时候就显示，没有的时候就不显示。
+	angularjs组成
+		view：视图
+		model：视图中的数据
+		controller：控制器，js函数，添加修改属性	
+	$scope: 是html与js之间的纽带，是一个对象，有属性方法。可以$scope.对象，函数
+			加载angularjs时的时候，就会重新创建一个作用域。
+	angularjs表达式
+		angularjs表达式{{}}支持文字，运算符和变量还有函数与ng-bind有异曲同工之处，ng-bind加载的时候不会显示{{num}}。
+		{{num}}配合ng-model="num" 帮你完成了变量的渲染
+	docs.ngnice.com/api
+		angular下有很多方法,如a.module等都只能写在js的controller里()	
+	购物车例子：
+		删除，清空，增加减少商品数量，计算总价等功能。
+		封装了一个findIndex的函数。
+		在控制器里函数用var，控制中用到的forEach方法
+		商品数量：防止输入负数-输入过滤，输出过滤代替脏检查
+		splice:从index开始，删除几个，还可以添加新元素，返回新的删除后的数组。
+		slice:参数start，end。返回截取删除的这个子数组。
+	多个控制器之间的数据如何传输的?
+	两个控制器共享数据？
+		依赖注入：myApp.factory('Data',function(){return {}}) return 的东西就是Data，
+			myApp.controller('firstController',function($scope,Data) 里的data
+	文档：
+		function
+		directive：
+			1.重写了html标签(a input textarea form) 如新增加了input src=“email url number”
+			2.ng标签 ng-show ng-disabled ng-checked 为true时显示，逻辑运算。
+			3.自定义directive
+	angularjs整体框架
+		config
+		filter
+		directive
+		factory provide service const value
+		controller
+	输出过滤-api 的filter：
+		currency ：{{money | currency : "rmb"}}
+		date ：{{today | date : "yyyy"}}
+		number ：{{num | number : 2}}  精确两位小数
+		limitTo : {{[1,2,3] | limitTo : 2}}
+		大小写：{{message | uppercase}}  {{message | lowercase}}  
+		filter: {{data.city | filter : '上海'}}
+		orderBy: {{data.city | orderBy : 'py'}}  {{data.city | orderBy : '-py'}}  
+	输入过滤-表单验证：
+		如何数据绑定 显示出错信息 避免提交没有验证过的表单 验证表单 整个form验证 防止多次提交
+		input属性：ng-required=true：必填值 
+				   ng-minlength ng-maxlength 
+				   ng-pattern="/^[a-zA-Z]{1}/"
+				   ng-changed：之变化的回调
+				   formName.inputFieldName.$error  显示错误
+				   formName.inputFieldName.$pristine 字段是否未更改
+				   formName.inputFieldName.$dirty    字段是否更改
+				   formName.inputFieldName.$valid    字段是否有效
+				   formName.inputFieldName.$invalid   字段是否无效
+ 		具体输入过滤：
+			用户名：
+			密码：
+			邮箱：ng-show="formname.inputname.$error.email" 验证格式
+			网址：ng-show="formname.inputname.$error.blog" 验证格式
+			单选按钮:正常选 调用class=“radio-inline”  在一行
+			多选按钮：
+	任何mvc框架包含的部分
+		1.入口地址
+			环境变量的配置 
+			整体框架路径的加载和核心文件的加载 跳转到主路由文件入口，把控制权交给路由
+		2.router形式
+		3.mvc框架
+		4.基础api
+		5.http协议api的高度封装
+		6.功能模块封装
+		7.input filter/output filter
+
+英文
+office.
+symfony
+php
+	PHP的8种类型 
+		4个标量类型：int float string bool
+		2个复合类型：array object
+		2个特殊类型：null resource
+	输出方法：echo print_r() var_dump()-输出值和类型
+			  原码输出：echo "<pre>";  var_dump($arr);  echo "</pre>";
+	拼字符串：用. echo $name." love ".$pass;
+	用$ 定义变量
+	类型转换：setType(转换的变量，'类型')    强制转换
+			  string-array     求长度strlen
+			  string-object
+	类型检测：is_null($var) isset() unset() empty() is_int($var) is_scalar($var) is_string($var) is_array()
+	定义数组：$arr = array();  
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
